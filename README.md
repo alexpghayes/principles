@@ -14,4 +14,3 @@ Other things to do:
 - decide on some canonical modelling examples. proposals:
   - LASSO for a model specification with structure hyperparameter space
   - random forest for a model specification with unstructured hyperparameter space
-  - (Max calls this the submodel trick, where fitting one model you get to evaluate models for many hyperparameter values)
