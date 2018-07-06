@@ -1,0 +1,23 @@
+# Interface
+
+
+- user friendly interfaces
+
+good and bad existing idioms
+
+
+
+- methods to implement
+- examples of tried and true workflows
+
+
+
+methods to implement
+- note on plotting: Should be easy to get the values plotted so others can make their own plots
+
+
+
+TWO DISTINCT ISSUES THAT GET RESOLVED IN FORMULAE:
+
+    design matrix specification
+    model specification. (a la fGarch::garchFit(~arma(1, 1) + garch(1, 0)))

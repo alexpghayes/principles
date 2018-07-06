@@ -1,0 +1,346 @@
+\documentclass[]{book}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Principles for modelling packages},
+            pdfauthor={TBD},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{natbib}
+\bibliographystyle{apalike}
+\usepackage{longtable,booktabs}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{Principles for modelling packages}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{TBD}
+    \preauthor{\centering\large\emph}
+  \postauthor{\par}
+      \predate{\centering\large\emph}
+  \postdate{\par}
+    \date{2018-07-06}
+
+
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]
+\newtheorem{corollary}{Corollary}[chapter]
+\newtheorem{proposition}{Proposition}[chapter]
+\theoremstyle{definition}
+\newtheorem{example}{Example}[chapter]
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}[chapter]
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{solution}{Solution}
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\chapter{Intro}\label{intro}
+
+\textbf{Rule 1}: Always spell it \emph{modelling}, never
+\emph{modeling}.
+
+\chapter{Conceptual overview of
+modelling}\label{conceptual-overview-of-modelling}
+
+\begin{itemize}
+\item
+  what is a model: models, estimands, estimators and model
+  specifications
+\item
+  what do we do with models
+\item
+  how do fit models
+\item
+  once we have a fit model, how do we predict or do inference
+\item
+  the difference between working with a single fit vs a set of fits.
+  LASSO example: wanting to use the coefficients for prediction vs
+  wanting to see the order in which features enter the model
+\end{itemize}
+
+\chapter{Danger Zone}\label{danger-zone}
+
+little things to include somewhere: - the danger of misspecified
+arguments disappearing into \texttt{...}
+
+\chapter{Data Specification}\label{data-specification}
+
+\begin{itemize}
+\item
+  formulas, model.frame, term objects, etc
+\item
+  data / design matrix specification - \texttt{recipes}
+\end{itemize}
+
+habit: get the df right, then y \textasciitilde{} . in the formula.
+would be nice to still see the features in the call?
+
+\begin{itemize}
+\tightlist
+\item
+  ask users to use data.frames and tibbles, not matrices.
+\end{itemize}
+
+\chapter{Documentation}\label{documentation}
+
+\begin{itemize}
+\item
+  vignette should include not only the coefficients as output in an
+  example, but also those coefficients written up as a general latex
+  model and as a latex model with those specific coefficients
+  substituted in
+\item
+  \textbf{show} your example data in the README so users immediately see
+  the structure
+\end{itemize}
+
+function to write out model form and fitted model in latex for sanity
+checking: some sort of model\_report / model\_form generic
+
+it's a bad idea to expect users to learn the \emph{math} for your model
+from function level documentation, or math presented in ascii or unicode
+or poorly rendered latex.
+
+show write out the math in a nicely formatted vignette, and then clearly
+describe the connection between code objects and math objects there as
+well
+
+\chapter{Functional programming
+principles}\label{functional-programming-principles}
+
+calls to fit should be pure: i.e.~no side effects like plotting, and
+especially no plotting with invisible object return - side effects:
+useful in interactive mode, irritating in programmatic mode
+
+\begin{itemize}
+\tightlist
+\item
+  type safety, particularly of returned objects
+\item
+  type safety with respect to single fits vs sets of fits
+\end{itemize}
+
+\chapter{Implementation}\label{implementation}
+
+\begin{itemize}
+\tightlist
+\item
+  argument matching for categorical choices
+\end{itemize}
+
+\chapter{Interactive modelling}\label{interactive-modelling}
+
+what most people do different because there's a person looking at stuff
+as opposed to programmatic model when it's just code interacting with
+the model with no human involved
+
+this is a chapter mostly to remind us to think of differences between
+the two and how they might be important in terms of interface
+
+\chapter{Interface}\label{interface}
+
+\begin{itemize}
+\tightlist
+\item
+  user friendly interfaces
+\end{itemize}
+
+good and bad existing idioms
+
+\begin{itemize}
+\tightlist
+\item
+  methods to implement
+\item
+  examples of tried and true workflows
+\end{itemize}
+
+methods to implement - note on plotting: Should be easy to get the
+values plotted so others can make their own plots
+
+TWO DISTINCT ISSUES THAT GET RESOLVED IN FORMULAE:
+
+\begin{verbatim}
+design matrix specification
+model specification. (a la fGarch::garchFit(~arma(1, 1) + garch(1, 0)))
+\end{verbatim}
+
+\chapter{Low and high level
+interfaces}\label{low-and-high-level-interfaces}
+
+\begin{itemize}
+\tightlist
+\item
+  high level versus low level interface
+\item
+  programmatic versus interactive use
+\end{itemize}
+
+when you should use which
+
+examples: - high level: keras, brms - low level: tensorflow, stan
+
+\chapter{Model objects}\label{model-objects}
+
+\begin{itemize}
+\item
+  some explanation of why and how to save the function call
+\item
+  generally what kinds of things should go into a model object, giving
+  model objects a class so other people can extend them
+\item
+  S3 object creation and validation for model building a la Advanced R
+\item
+  Model classes beyond lists. when is S4 worth it? when is R6?
+\item
+  Every modeling function should include its package version in its data
+  object I will now save my models as a list of three objects: model,
+  data, and sessioninfo::session\_info()
+\end{itemize}
+
+\chapter{Programmatic modelling}\label{programmatic-modelling}
+
+i.e.~interacting with models programmatically
+
+examples: - packages that export a model from someone to use a la
+\href{https://github.com/mkearney/tweetbotornot}{\texttt{botornot}} -
+models sitting behind a Plumber API - etc
+
+\chapter{References}\label{references}
+
+\begin{itemize}
+\tightlist
+\item
+  bdr's
+  \href{https://developer.r-project.org/model-fitting-functions.html}{model
+  fitting functions in r}
+\end{itemize}
+
+\chapter{Testing}\label{testing}
+
+\begin{itemize}
+\tightlist
+\item
+  testing against existing software - say a Matlab implementation
+\item
+  saving long running models in \texttt{R/sysdata.rda} with
+  \texttt{usethis::use\_data(model\_obj,\ internal\ =\ TRUE)}
+\end{itemize}
+
+\chapter{Workflow}\label{workflow}
+
+\section{Prediction}\label{prediction}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  feature engineering
+\item
+  ML wizardry
+\item
+  more feature engineering
+\item
+  ???
+\item
+  predictions
+\end{enumerate}
+
+\section{Inference}\label{inference}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Clean data
+\item
+  Specify model
+\item
+  Fit model
+\item
+  Check that model fitting process converged / worked
+\item
+  Check statistical assumptions of model
+\end{enumerate}
+
+KEY part that always gets left out: working with multiple modellings
+
+\bibliography{book.bib,packages.bib}
+
+
+\end{document}

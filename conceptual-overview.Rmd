@@ -1,0 +1,8 @@
+# Conceptual overview of modelling
+
+- what is a model: models, estimands, estimators and model specifications
+- what do we do with models
+- how do fit models
+- once we have a fit model, how do we predict or do inference
+
+- the difference between working with a single fit vs a set of fits. LASSO example: wanting to use the coefficients for prediction vs wanting to see the order in which features enter the model

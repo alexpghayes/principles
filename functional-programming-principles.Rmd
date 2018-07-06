@@ -1,0 +1,7 @@
+# Functional programming principles
+
+calls to fit should be pure: i.e. no side effects like plotting, and especially no plotting with invisible object return
+- side effects: useful in interactive mode, irritating in programmatic mode
+
+- type safety, particularly of returned objects
+- type safety with respect to single fits vs sets of fits

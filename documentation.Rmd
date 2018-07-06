@@ -1,0 +1,14 @@
+# Documentation
+
+- vignette should include not only the coefficients as output in an example, but also those coefficients written up as a general latex model and as a latex model with those specific coefficients substituted in
+
+
+- **show** your example data in the README so users immediately see the structure
+
+
+function to write out model form and fitted model in latex for sanity checking: some sort of model_report / model_form generic
+
+
+it's a bad idea to expect users to learn the *math* for your model from function level documentation, or math presented in ascii or unicode or poorly rendered latex.
+
+show write out the math in a nicely formatted vignette, and then clearly describe the connection between code objects and math objects there as well

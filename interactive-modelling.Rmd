@@ -1,0 +1,6 @@
+# Interactive modelling
+
+what most people do
+different because there's a person looking at stuff as opposed to programmatic model when it's just code interacting with the model with no human involved
+
+this is a chapter mostly to remind us to think of differences between the two and how they might be important in terms of interface

@@ -1,0 +1,11 @@
+# Model objects
+
+- some explanation of why and how to save the function call
+- generally what kinds of things should go into a model object, giving model objects a class so other people can extend them
+
+
+
+- S3 object creation and validation for model building a la Advanced R
+- Model classes beyond lists. when is S4 worth it? when is R6?
+
+- Every modeling function should include its package version in its data object I will now save my models as a list of three objects: model, data, and sessioninfo::session_info()

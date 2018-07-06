@@ -1,0 +1,12 @@
+# Data Specification
+
+
+- formulas, model.frame, term objects, etc
+
+
+
+- data / design matrix specification - `recipes`
+
+habit: get the df right, then y ~ . in the formula. would be nice to still see the features in the call?
+
+- ask users to use data.frames and tibbles, not matrices.

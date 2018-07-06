@@ -1,0 +1,4 @@
+# Danger Zone
+
+little things to include somewhere:
+  - the danger of misspecified arguments disappearing into `...`

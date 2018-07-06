@@ -1,0 +1,3 @@
+# References
+
+  - bdr's [model fitting functions in r](https://developer.r-project.org/model-fitting-functions.html)

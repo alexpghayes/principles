@@ -1,0 +1,11 @@
+# Low and high level interfaces
+
+
+- high level versus low level interface
+- programmatic versus interactive use
+
+when you should use which
+
+examples:
+  - high level: keras, brms
+  - low level: tensorflow, stan

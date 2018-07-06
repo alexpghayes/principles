@@ -1,0 +1,10 @@
+# Programmatic modelling
+
+i.e. interacting with models programmatically
+
+examples:
+  - packages that export a model from someone to use a la [`botornot`][1]
+  - models sitting behind a Plumber API
+  - etc
+
+[1]: https://github.com/mkearney/tweetbotornot

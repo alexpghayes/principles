@@ -1,0 +1,20 @@
+# Workflow
+
+## Prediction
+
+1. feature engineering
+2. ML wizardry
+3. more feature engineering
+4. ???
+5. predictions
+
+## Inference
+
+1. Clean data
+2. Specify model
+3. Fit model
+4. Check that model fitting process converged / worked
+5. Check statistical assumptions of model
+
+
+KEY part that always gets left out: working with multiple modellings

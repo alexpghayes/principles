@@ -1,0 +1,15 @@
+--- 
+title: "Principles for modelling packages"
+author: "TBD"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+description: "Wherein profound and occasionally silly advice is provided (always in passive voice) on how to write a modelling package on R. The current outline written by someone who has never actually written a modelling package in R."
+---
+
+# Intro
+
+**Rule 1**: Always spell it *modelling*, never *modeling*.
