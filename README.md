@@ -14,3 +14,6 @@ Other things to do:
 - decide on some canonical modelling examples. proposals:
   - LASSO for a model specification with structure hyperparameter space
   - random forest for a model specification with unstructured hyperparameter space
+  
+  
+Another potential topic: wrapping and working with existing modelling packages
