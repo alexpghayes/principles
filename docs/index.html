@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Principles for modelling packages</title>
+  <meta name="description" content="Wherein profound and occasionally silly advice is provided (always in passive voice) on how to write a modelling package on R. The current outline written by someone who has never actually written a modelling package in R.">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Principles for modelling packages" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Wherein profound and occasionally silly advice is provided (always in passive voice) on how to write a modelling package on R. The current outline written by someone who has never actually written a modelling package in R." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Principles for modelling packages" />
+  
+  <meta name="twitter:description" content="Wherein profound and occasionally silly advice is provided (always in passive voice) on how to write a modelling package on R. The current outline written by someone who has never actually written a modelling package in R." />
+  
+
+<meta name="author" content="TBD">
+
+
+<meta name="date" content="2018-07-06">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+
+<link rel="next" href="conceptual-overview-of-modelling.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Principles for modelling packages</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Intro</a></li>
+<li class="chapter" data-level="2" data-path="conceptual-overview-of-modelling.html"><a href="conceptual-overview-of-modelling.html"><i class="fa fa-check"></i><b>2</b> Conceptual overview of modelling</a></li>
+<li class="chapter" data-level="3" data-path="danger-zone.html"><a href="danger-zone.html"><i class="fa fa-check"></i><b>3</b> Danger Zone</a></li>
+<li class="chapter" data-level="4" data-path="data-specification.html"><a href="data-specification.html"><i class="fa fa-check"></i><b>4</b> Data Specification</a></li>
+<li class="chapter" data-level="5" data-path="documentation.html"><a href="documentation.html"><i class="fa fa-check"></i><b>5</b> Documentation</a></li>
+<li class="chapter" data-level="6" data-path="functional-programming-principles.html"><a href="functional-programming-principles.html"><i class="fa fa-check"></i><b>6</b> Functional programming principles</a></li>
+<li class="chapter" data-level="7" data-path="implementation.html"><a href="implementation.html"><i class="fa fa-check"></i><b>7</b> Implementation</a></li>
+<li class="chapter" data-level="8" data-path="interactive-modelling.html"><a href="interactive-modelling.html"><i class="fa fa-check"></i><b>8</b> Interactive modelling</a></li>
+<li class="chapter" data-level="9" data-path="interface.html"><a href="interface.html"><i class="fa fa-check"></i><b>9</b> Interface</a></li>
+<li class="chapter" data-level="10" data-path="low-and-high-level-interfaces.html"><a href="low-and-high-level-interfaces.html"><i class="fa fa-check"></i><b>10</b> Low and high level interfaces</a></li>
+<li class="chapter" data-level="11" data-path="model-objects.html"><a href="model-objects.html"><i class="fa fa-check"></i><b>11</b> Model objects</a></li>
+<li class="chapter" data-level="12" data-path="programmatic-modelling.html"><a href="programmatic-modelling.html"><i class="fa fa-check"></i><b>12</b> Programmatic modelling</a></li>
+<li class="chapter" data-level="13" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>13</b> References</a></li>
+<li class="chapter" data-level="14" data-path="testing.html"><a href="testing.html"><i class="fa fa-check"></i><b>14</b> Testing</a></li>
+<li class="chapter" data-level="15" data-path="workflow.html"><a href="workflow.html"><i class="fa fa-check"></i><b>15</b> Workflow</a><ul>
+<li class="chapter" data-level="15.1" data-path="workflow.html"><a href="workflow.html#prediction"><i class="fa fa-check"></i><b>15.1</b> Prediction</a></li>
+<li class="chapter" data-level="15.2" data-path="workflow.html"><a href="workflow.html#inference"><i class="fa fa-check"></i><b>15.2</b> Inference</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Principles for modelling packages</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">Principles for modelling packages</h1>
+<h4 class="author"><em>TBD</em></h4>
+<h4 class="date"><em>2018-07-06</em></h4>
+</div>
+<div id="intro" class="section level1">
+<h1><span class="header-section-number">Chapter 1</span> Intro</h1>
+<p><strong>Rule 1</strong>: Always spell it <em>modelling</em>, never <em>modeling</em>.</p>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="conceptual-overview-of-modelling.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection",
+"download": ["pdf", "epub"]
+}
+});
+});
+</script>
+
+</body>
+
+</html>
