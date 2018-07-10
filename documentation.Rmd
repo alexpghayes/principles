@@ -12,3 +12,11 @@ function to write out model form and fitted model in latex for sanity checking: 
 it's a bad idea to expect users to learn the *math* for your model from function level documentation, or math presented in ascii or unicode or poorly rendered latex.
 
 show write out the math in a nicely formatted vignette, and then clearly describe the connection between code objects and math objects there as well
+
+
+documenting arguments:
+
+- `data`: super important to document acceptable **types** and formats, and highly recommend provided a dataset in `data/` with this format so the user can see exactly what they need to provide. 
+
+bad doc: The dataset to fit on the model on
+better doc: A data.frame or tibble with one row per observation and one column per features. For example, `mtcars` is in this format, but `messy_data` is not. It is okay to specify a matrix so long as it can coerced to a tibble. etc etc
