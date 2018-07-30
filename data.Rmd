@@ -1,0 +1,4 @@
+# Data
+
+- using data from the package in tests
+- using data from *other* packages in tests

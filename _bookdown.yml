@@ -4,3 +4,27 @@ output_dir: "docs"
 language:
   ui:
     chapter_name: "Chapter "
+
+rmd_files: [
+  "index.Rmd",
+
+  "conceptual-overview.Rmd",
+  "getting-started-checklist.Rmd",
+
+  "model-objects.Rmd",
+  "data-specification.Rmd",
+  "functional-programming-principles.Rmd",
+  "data.Rmd",
+  "documentation.Rmd",
+  "testing.Rmd",
+
+  "workflow.Rmd",
+  "interface.Rmd",
+  "low-and-high-level-interfaces.Rmd",
+  "interactive-modelling.Rmd",
+  "programmatic-modelling.Rmd",
+
+  "naming-things.Rmd",
+  "danger-zone.Rmd",
+  "references.Rmd"
+]

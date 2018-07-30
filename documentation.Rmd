@@ -6,7 +6,7 @@
 - **show** your example data in the README so users immediately see the structure
 
 
-function to write out model form and fitted model in latex for sanity checking: some sort of model_report / model_form generic
+function to write out model form and fitted model in latex for sanity checking: some sort of model_report / model_form generic. think `report` generic or `write.model` may be coming to `fable`/`forecast` soon.
 
 
 it's a bad idea to expect users to learn the *math* for your model from function level documentation, or math presented in ascii or unicode or poorly rendered latex.

@@ -85,7 +85,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-07-06}
+    \date{2018-07-30}
 
 
 \usepackage{amsthm}
@@ -133,127 +133,28 @@ modelling}\label{conceptual-overview-of-modelling}
   wanting to see the order in which features enter the model
 \end{itemize}
 
-\chapter{Danger Zone}\label{danger-zone}
+\chapter{Getting started on a modelling
+package}\label{getting-started-on-a-modelling-package}
 
-little things to include somewhere: - the danger of misspecified
-arguments disappearing into \texttt{...}
-
-\chapter{Data Specification}\label{data-specification}
-
-\begin{itemize}
-\item
-  formulas, model.frame, term objects, etc
-\item
-  data / design matrix specification - \texttt{recipes}
-\end{itemize}
-
-habit: get the df right, then y \textasciitilde{} . in the formula.
-would be nice to still see the features in the call?
+General dos:
 
 \begin{itemize}
 \tightlist
 \item
-  ask users to use data.frames and tibbles, not matrices.
+  Export the \texttt{predict()} method
+\item
+  Document the \texttt{predict()} method
+\item
+  Use \texttt{match.arg()} for categorical arguments
+\item
+  Validate the arguments to all your functions, especially our data
 \end{itemize}
 
-\chapter{Documentation}\label{documentation}
+General dont's
 
 \begin{itemize}
 \item
-  vignette should include not only the coefficients as output in an
-  example, but also those coefficients written up as a general latex
-  model and as a latex model with those specific coefficients
-  substituted in
-\item
-  \textbf{show} your example data in the README so users immediately see
-  the structure
 \end{itemize}
-
-function to write out model form and fitted model in latex for sanity
-checking: some sort of model\_report / model\_form generic
-
-it's a bad idea to expect users to learn the \emph{math} for your model
-from function level documentation, or math presented in ascii or unicode
-or poorly rendered latex.
-
-show write out the math in a nicely formatted vignette, and then clearly
-describe the connection between code objects and math objects there as
-well
-
-\chapter{Functional programming
-principles}\label{functional-programming-principles}
-
-calls to fit should be pure: i.e.~no side effects like plotting, and
-especially no plotting with invisible object return - side effects:
-useful in interactive mode, irritating in programmatic mode
-
-\begin{itemize}
-\tightlist
-\item
-  type safety, particularly of returned objects
-\item
-  type safety with respect to single fits vs sets of fits
-\end{itemize}
-
-\chapter{Implementation}\label{implementation}
-
-\begin{itemize}
-\tightlist
-\item
-  argument matching for categorical choices
-\end{itemize}
-
-\chapter{Interactive modelling}\label{interactive-modelling}
-
-what most people do different because there's a person looking at stuff
-as opposed to programmatic model when it's just code interacting with
-the model with no human involved
-
-this is a chapter mostly to remind us to think of differences between
-the two and how they might be important in terms of interface
-
-\chapter{Interface}\label{interface}
-
-\begin{itemize}
-\tightlist
-\item
-  user friendly interfaces
-\end{itemize}
-
-good and bad existing idioms
-
-\begin{itemize}
-\tightlist
-\item
-  methods to implement
-\item
-  examples of tried and true workflows
-\end{itemize}
-
-methods to implement - note on plotting: Should be easy to get the
-values plotted so others can make their own plots
-
-TWO DISTINCT ISSUES THAT GET RESOLVED IN FORMULAE:
-
-\begin{verbatim}
-design matrix specification
-model specification. (a la fGarch::garchFit(~arma(1, 1) + garch(1, 0)))
-\end{verbatim}
-
-\chapter{Low and high level
-interfaces}\label{low-and-high-level-interfaces}
-
-\begin{itemize}
-\tightlist
-\item
-  high level versus low level interface
-\item
-  programmatic versus interactive use
-\end{itemize}
-
-when you should use which
-
-examples: - high level: keras, brms - low level: tensorflow, stan
 
 \chapter{Model objects}\label{model-objects}
 
@@ -273,23 +174,91 @@ examples: - high level: keras, brms - low level: tensorflow, stan
   data, and sessioninfo::session\_info()
 \end{itemize}
 
-\chapter{Programmatic modelling}\label{programmatic-modelling}
+\chapter{Data Specification}\label{data-specification}
 
-i.e.~interacting with models programmatically
+\begin{itemize}
+\item
+  formulas, model.frame, term objects, etc
+\item
+  data / design matrix specification - \texttt{recipes}
+\end{itemize}
 
-examples: - packages that export a model from someone to use a la
-\href{https://github.com/mkearney/tweetbotornot}{\texttt{botornot}} -
-models sitting behind a Plumber API - etc
-
-\chapter{References}\label{references}
+habit: get the df right, then y \textasciitilde{} . in the formula.
+would be nice to still see the features in the call?
 
 \begin{itemize}
 \tightlist
 \item
-  bdr's
-  \href{https://developer.r-project.org/model-fitting-functions.html}{model
-  fitting functions in r}
+  ask users to use data.frames and tibbles, not matrices.
 \end{itemize}
+
+\chapter{Functional programming
+principles}\label{functional-programming-principles}
+
+calls to fit should be pure: i.e.~no side effects like plotting, and
+especially no plotting with invisible object return - side effects:
+useful in interactive mode, irritating in programmatic mode
+
+\begin{itemize}
+\tightlist
+\item
+  type safety, particularly of returned objects
+\item
+  type safety with respect to single fits vs sets of fits
+\end{itemize}
+
+\chapter{Data}\label{data}
+
+\begin{itemize}
+\tightlist
+\item
+  using data from the package in tests
+\item
+  using data from \emph{other} packages in tests
+\end{itemize}
+
+\chapter{Documentation}\label{documentation}
+
+\begin{itemize}
+\item
+  vignette should include not only the coefficients as output in an
+  example, but also those coefficients written up as a general latex
+  model and as a latex model with those specific coefficients
+  substituted in
+\item
+  \textbf{show} your example data in the README so users immediately see
+  the structure
+\end{itemize}
+
+function to write out model form and fitted model in latex for sanity
+checking: some sort of model\_report / model\_form generic. think
+\texttt{report} generic or \texttt{write.model} may be coming to
+\texttt{fable}/\texttt{forecast} soon.
+
+it's a bad idea to expect users to learn the \emph{math} for your model
+from function level documentation, or math presented in ascii or unicode
+or poorly rendered latex.
+
+show write out the math in a nicely formatted vignette, and then clearly
+describe the connection between code objects and math objects there as
+well
+
+documenting arguments:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{data}: super important to document acceptable \textbf{types}
+  and formats, and highly recommend provided a dataset in \texttt{data/}
+  with this format so the user can see exactly what they need to
+  provide.
+\end{itemize}
+
+bad doc: The dataset to fit on the model on better doc: A data.frame or
+tibble with one row per observation and one column per features. For
+example, \texttt{mtcars} is in this format, but \texttt{messy\_data} is
+not. It is okay to specify a matrix so long as it can coerced to a
+tibble. etc etc
 
 \chapter{Testing}\label{testing}
 
@@ -339,6 +308,96 @@ models sitting behind a Plumber API - etc
 \end{enumerate}
 
 KEY part that always gets left out: working with multiple modellings
+
+\chapter{Interface}\label{interface}
+
+\begin{itemize}
+\tightlist
+\item
+  user friendly interfaces
+\end{itemize}
+
+good and bad existing idioms
+
+\begin{itemize}
+\tightlist
+\item
+  methods to implement
+\item
+  examples of tried and true workflows
+\end{itemize}
+
+methods to implement - note on plotting: Should be easy to get the
+values plotted so others can make their own plots
+
+TWO DISTINCT ISSUES THAT GET RESOLVED IN FORMULAE:
+
+\begin{verbatim}
+design matrix specification
+model specification. (a la fGarch::garchFit(~arma(1, 1) + garch(1, 0)))
+\end{verbatim}
+
+\chapter{Low and high level
+interfaces}\label{low-and-high-level-interfaces}
+
+\begin{itemize}
+\tightlist
+\item
+  high level versus low level interface
+\item
+  programmatic versus interactive use
+\end{itemize}
+
+when you should use which
+
+examples: - high level: keras, brms - low level: tensorflow, stan
+
+\chapter{Interactive modelling}\label{interactive-modelling}
+
+what most people do different because there's a person looking at stuff
+as opposed to programmatic model when it's just code interacting with
+the model with no human involved
+
+this is a chapter mostly to remind us to think of differences between
+the two and how they might be important in terms of interface
+
+\chapter{Programmatic modelling}\label{programmatic-modelling}
+
+i.e.~interacting with models programmatically
+
+examples: - packages that export a model from someone to use a la
+\href{https://github.com/mkearney/tweetbotornot}{\texttt{botornot}} -
+models sitting behind a Plumber API - etc
+
+\chapter{Naming things}\label{naming-things}
+
+\section{How to name function
+arguments}\label{how-to-name-function-arguments}
+
+\section{How to name model
+components}\label{how-to-name-model-components}
+
+some standard names
+
+currently lots of work happening in this realm in \texttt{broom} and the
+Stan community
+
+\url{https://github.com/tidymodels/broom/issues/452}
+
+\chapter{Danger Zone}\label{danger-zone}
+
+little things to include somewhere: - the danger of misspecified
+arguments disappearing into \texttt{...}
+
+\chapter{References}\label{references}
+
+\begin{itemize}
+\tightlist
+\item
+  bdr's
+  \href{https://developer.r-project.org/model-fitting-functions.html}{model
+  fitting functions in r}
+\end{itemize}
 
 \bibliography{book.bib,packages.bib}
 

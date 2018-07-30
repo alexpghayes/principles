@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="interactive-modelling.html">
-<link rel="next" href="naming-things.html">
+<link rel="prev" href="conceptual-overview-of-modelling.html">
+<link rel="next" href="model-objects.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -106,10 +106,19 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="programmatic-modelling" class="section level1">
-<h1><span class="header-section-number">Chapter 14</span> Programmatic modelling</h1>
-<p>i.e. interacting with models programmatically</p>
-<p>examples: - packages that export a model from someone to use a la <a href="https://github.com/mkearney/tweetbotornot"><code>botornot</code></a> - models sitting behind a Plumber API - etc</p>
+<div id="getting-started-on-a-modelling-package" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Getting started on a modelling package</h1>
+<p>General dos:</p>
+<ul>
+<li>Export the <code>predict()</code> method</li>
+<li>Document the <code>predict()</code> method</li>
+<li>Use <code>match.arg()</code> for categorical arguments</li>
+<li>Validate the arguments to all your functions, especially our data</li>
+</ul>
+<p>General dont’s</p>
+<ul>
+<li></li>
+</ul>
 
 </div>
             </section>
@@ -117,8 +126,8 @@
           </div>
         </div>
       </div>
-<a href="interactive-modelling.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="naming-things.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="conceptual-overview-of-modelling.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="model-objects.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

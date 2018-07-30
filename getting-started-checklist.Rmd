@@ -1,0 +1,15 @@
+# Getting started on a modelling package
+
+General dos:
+
+- Export the `predict()` method
+- Document the `predict()` method
+- Use `match.arg()` for categorical arguments
+- Validate the arguments to all your functions, especially our data
+
+General dont's
+
+- 
+
+
+

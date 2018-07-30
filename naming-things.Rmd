@@ -1,0 +1,12 @@
+# Naming things
+
+## How to name function arguments
+
+## How to name model components
+
+some standard names
+
+currently lots of work happening in this realm in `broom` and the Stan community
+
+
+https://github.com/tidymodels/broom/issues/452

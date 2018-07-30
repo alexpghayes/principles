@@ -2,3 +2,4 @@
 
 - testing against existing software - say a Matlab implementation
 - saving long running models in `R/sysdata.rda` with `usethis::use_data(model_obj, internal = TRUE)`
+
