@@ -13,3 +13,7 @@ description: "Wherein profound and occasionally silly advice is provided (always
 # Intro
 
 **Rule 1**: Always spell it *modelling*, never *modeling*.
+
+This document is targetted at R developers writing new packages for modelling.
+
+For users interesting in learning more about using R for modelling in practice, we recommend X and Y

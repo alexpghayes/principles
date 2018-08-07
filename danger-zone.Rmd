@@ -2,3 +2,39 @@
 
 little things to include somewhere:
   - the danger of misspecified arguments disappearing into `...`
+  
+don't give your model `lm` class and count on other stuff to magically work. your should implement methods specifically for your class, and if that is just wrapping lm internals, great, but take explicit control
+
+provide an example of extensive formula tests:
+include a log term in tests to catch formula edge cases
+
+
+## Anti-patterns
+
+### the documentation that isn't documentation and doesn't feature an actual use case
+
+*cough* `?MASS::predict.rlm` *cough*
+
+
+### Never use missing arguments
+
+because people have to write more code to pass the objects they want
+
+predict(m) and predict(m, newdata = NULL) should do the same thing
+you should test this
+
+
+### special casing everything through one workhorse function instead of using S3 methods
+
+basically `augment_columns`
+
+don't funnel everything through augment_columns and add special cases slowly - v hard to maintain. much better to have individualized S3 methods with *consistent behavior* abstracted out into small helpers.
+
+## Things to be aware of
+
+If you call things `data` or `df` and users fail to specify data arguments, R will try and perform dataframe operations on the *functions* `data` and `df`. The resulting error messages for this can be cryptic. In this case you may wish to write an informative error message with a hint:
+
+```
+Error: Can't *do data frame thing* on a function.
+Are you sure you passed a tibble to *argument*?
+```

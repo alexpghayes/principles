@@ -10,3 +10,34 @@
 habit: get the df right, then y ~ . in the formula. would be nice to still see the features in the call?
 
 - ask users to use data.frames and tibbles, not matrices.
+
+## Formulas
+
+### Testing formulas
+
+https://github.com/alexpghayes/formulize/blob/master/tests/testthat/test_formula.R
+
+minimum set of formula tests (based on mtcars example dataset):
+
+- using `as.factor()` inline `mpg ~ as.factor(hp)`
+- using `as.character()` inline `mpg ~ as.character(hp)`
+- intercept only `mpg ~ 1`
+- no intercept `mpg ~ disp + hp + drat - 1`
+- implicit intercept `mpg ~ disp + hp + drat`
+- explicit intercept `mpg ~ disp + hp + drat +  1`
+- polynomials with 1 term `mpg ~ disp + hp + poly(drat, 1)`
+- polynomials with multiple terms `mpg ~ disp + hp + poly(drat, 3)`
+- natural splines with 1 term `mpg ~ disp + hp + ns(drat, 1)`
+- natural splines with multiple terms `mpg ~ disp + hp + ns(drat, 3)`
+- explicit interactios `mpg ~ drat + hp + drat:hp`
+- dot `mpg ~ .`
+- star `mpg ~ hp * drat`
+- as.is `mpg ~ hp + I(drat^2)`
+- multiple response cbind
+- multiple responses as matrix `y ~ x` where `y` is a matrix
+- multiple predictors as matrix `y ~ x` where `x` is a matrix
+- multiple predictos and responses together `y ~ x`, both `x`, `y` matrices
+- transformed response `log(mpg) ~ hp + drat`
+
+optional / to:
+- `survival::Surv` and `survival::strata` objects
