@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="workflow.html">
-<link rel="next" href="low-and-high-level-interfaces.html">
+<link rel="prev" href="programmatic-modelling.html">
+<link rel="next" href="naming-things.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -161,29 +161,29 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="interface" class="section level1">
-<h1><span class="header-section-number">Chapter 11</span> Interface</h1>
-<ul>
-<li>user friendly interfaces</li>
-</ul>
-<p>good and bad existing idioms</p>
-<ul>
-<li>methods to implement</li>
-<li>examples of tried and true workflows</li>
-</ul>
-<p>methods to implement - note on plotting: Should be easy to get the values plotted so others can make their own plots</p>
-<p>TWO DISTINCT ISSUES THAT GET RESOLVED IN FORMULAE:</p>
-<pre><code>design matrix specification
-model specification. (a la fGarch::garchFit(~arma(1, 1) + garch(1, 0)))</code></pre>
+<div id="vocabulary" class="section level1">
+<h1><span class="header-section-number">Chapter 15</span> Vocabulary</h1>
+<p>useful functions that all modelling package developers should be aware of</p>
+<p>all.names(terms_object) all.vars(terms_object)</p>
+<div id="model-frame-stuff" class="section level2">
+<h2><span class="header-section-number">15.1</span> model frame stuff</h2>
+<p>model.frame mode</p>
+</div>
+<div id="na.action-stuff" class="section level2">
+<h2><span class="header-section-number">15.2</span> na.action stuff</h2>
+</div>
+<div id="quoting-operators" class="section level2">
+<h2><span class="header-section-number">15.3</span> quoting operators</h2>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="workflow.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="low-and-high-level-interfaces.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="programmatic-modelling.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="naming-things.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

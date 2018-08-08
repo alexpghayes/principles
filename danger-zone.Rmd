@@ -8,12 +8,39 @@ don't give your model `lm` class and count on other stuff to magically work. you
 provide an example of extensive formula tests:
 include a log term in tests to catch formula edge cases
 
+## Warnings / places to use care
+
+model.frame() is not the be all end all
+
+double evaluation issue in 
+
+```{r, error = TRUE}
+fit <- lm(hp ~ log(mpg), mtcars)
+predict(fit, newdata = model.frame(fit))
+```
+
+don't do predict(object, newdata = model.frame(object)) since this will breaaaaaaaak
+
 
 ## Anti-patterns
 
+
+### Using the default method of a generic
+
+i.e. funneling everything into `confint.default`. Default methods for new generics should throw an error.
+
+What do to about existing generics?
+
+Key principle here: want to *guarantee* to the user that they are getting the right numbers
+
+don't funnel everything through augment_columns and add special cases slowly - v hard to maintain. much better to have individualized S3 methods with *consistent behavior* abstracted out into small helpers.
+
+related idea to the belong: have enough classes! using inheritance appropriately.
+
 ### the documentation that isn't documentation and doesn't feature an actual use case
 
-*cough* `?MASS::predict.rlm` *cough*
+- *cough* `?MASS::predict.rlm` *cough*
+- misisng doc `?MASS:::predict.polr()`
 
 
 ### Never use missing arguments

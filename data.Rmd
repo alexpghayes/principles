@@ -1,4 +1,6 @@
 # Data
 
+specification, exported data, and data sets used internally in a package
+
 - using data from the package in tests
 - using data from *other* packages in tests

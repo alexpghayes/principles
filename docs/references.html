@@ -25,7 +25,7 @@
 <meta name="author" content="TBD">
 
 
-<meta name="date" content="2018-07-30">
+<meta name="date" content="2018-08-08">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -49,6 +49,43 @@
 
 
 
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -70,7 +107,11 @@
 <li class="chapter" data-level="2" data-path="conceptual-overview-of-modelling.html"><a href="conceptual-overview-of-modelling.html"><i class="fa fa-check"></i><b>2</b> Conceptual overview of modelling</a></li>
 <li class="chapter" data-level="3" data-path="getting-started-on-a-modelling-package.html"><a href="getting-started-on-a-modelling-package.html"><i class="fa fa-check"></i><b>3</b> Getting started on a modelling package</a></li>
 <li class="chapter" data-level="4" data-path="model-objects.html"><a href="model-objects.html"><i class="fa fa-check"></i><b>4</b> Model objects</a></li>
-<li class="chapter" data-level="5" data-path="data-specification.html"><a href="data-specification.html"><i class="fa fa-check"></i><b>5</b> Data Specification</a></li>
+<li class="chapter" data-level="5" data-path="data-specification.html"><a href="data-specification.html"><i class="fa fa-check"></i><b>5</b> Data Specification</a><ul>
+<li class="chapter" data-level="5.1" data-path="data-specification.html"><a href="data-specification.html#formulas"><i class="fa fa-check"></i><b>5.1</b> Formulas</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="data-specification.html"><a href="data-specification.html#testing-formulas"><i class="fa fa-check"></i><b>5.1.1</b> Testing formulas</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="6" data-path="functional-programming-principles.html"><a href="functional-programming-principles.html"><i class="fa fa-check"></i><b>6</b> Functional programming principles</a></li>
 <li class="chapter" data-level="7" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>7</b> Data</a></li>
 <li class="chapter" data-level="8" data-path="documentation.html"><a href="documentation.html"><i class="fa fa-check"></i><b>8</b> Documentation</a></li>
@@ -83,12 +124,26 @@
 <li class="chapter" data-level="12" data-path="low-and-high-level-interfaces.html"><a href="low-and-high-level-interfaces.html"><i class="fa fa-check"></i><b>12</b> Low and high level interfaces</a></li>
 <li class="chapter" data-level="13" data-path="interactive-modelling.html"><a href="interactive-modelling.html"><i class="fa fa-check"></i><b>13</b> Interactive modelling</a></li>
 <li class="chapter" data-level="14" data-path="programmatic-modelling.html"><a href="programmatic-modelling.html"><i class="fa fa-check"></i><b>14</b> Programmatic modelling</a></li>
-<li class="chapter" data-level="15" data-path="naming-things.html"><a href="naming-things.html"><i class="fa fa-check"></i><b>15</b> Naming things</a><ul>
-<li class="chapter" data-level="15.1" data-path="naming-things.html"><a href="naming-things.html#how-to-name-function-arguments"><i class="fa fa-check"></i><b>15.1</b> How to name function arguments</a></li>
-<li class="chapter" data-level="15.2" data-path="naming-things.html"><a href="naming-things.html#how-to-name-model-components"><i class="fa fa-check"></i><b>15.2</b> How to name model components</a></li>
+<li class="chapter" data-level="15" data-path="vocabulary.html"><a href="vocabulary.html"><i class="fa fa-check"></i><b>15</b> Vocabulary</a><ul>
+<li class="chapter" data-level="15.1" data-path="vocabulary.html"><a href="vocabulary.html#model-frame-stuff"><i class="fa fa-check"></i><b>15.1</b> model frame stuff</a></li>
+<li class="chapter" data-level="15.2" data-path="vocabulary.html"><a href="vocabulary.html#na.action-stuff"><i class="fa fa-check"></i><b>15.2</b> na.action stuff</a></li>
+<li class="chapter" data-level="15.3" data-path="vocabulary.html"><a href="vocabulary.html#quoting-operators"><i class="fa fa-check"></i><b>15.3</b> quoting operators</a></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="danger-zone.html"><a href="danger-zone.html"><i class="fa fa-check"></i><b>16</b> Danger Zone</a></li>
-<li class="chapter" data-level="17" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>17</b> References</a></li>
+<li class="chapter" data-level="16" data-path="naming-things.html"><a href="naming-things.html"><i class="fa fa-check"></i><b>16</b> Naming things</a><ul>
+<li class="chapter" data-level="16.1" data-path="naming-things.html"><a href="naming-things.html#how-to-name-function-arguments"><i class="fa fa-check"></i><b>16.1</b> How to name function arguments</a></li>
+<li class="chapter" data-level="16.2" data-path="naming-things.html"><a href="naming-things.html#how-to-name-model-components"><i class="fa fa-check"></i><b>16.2</b> How to name model components</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="danger-zone.html"><a href="danger-zone.html"><i class="fa fa-check"></i><b>17</b> Danger Zone</a><ul>
+<li class="chapter" data-level="17.1" data-path="danger-zone.html"><a href="danger-zone.html#warnings-places-to-use-care"><i class="fa fa-check"></i><b>17.1</b> Warnings / places to use care</a></li>
+<li class="chapter" data-level="17.2" data-path="danger-zone.html"><a href="danger-zone.html#anti-patterns"><i class="fa fa-check"></i><b>17.2</b> Anti-patterns</a><ul>
+<li class="chapter" data-level="17.2.1" data-path="danger-zone.html"><a href="danger-zone.html#using-the-default-method-of-a-generic"><i class="fa fa-check"></i><b>17.2.1</b> Using the default method of a generic</a></li>
+<li class="chapter" data-level="17.2.2" data-path="danger-zone.html"><a href="danger-zone.html#the-documentation-that-isnt-documentation-and-doesnt-feature-an-actual-use-case"><i class="fa fa-check"></i><b>17.2.2</b> the documentation that isn’t documentation and doesn’t feature an actual use case</a></li>
+<li class="chapter" data-level="17.2.3" data-path="danger-zone.html"><a href="danger-zone.html#never-use-missing-arguments"><i class="fa fa-check"></i><b>17.2.3</b> Never use missing arguments</a></li>
+<li class="chapter" data-level="17.2.4" data-path="danger-zone.html"><a href="danger-zone.html#special-casing-everything-through-one-workhorse-function-instead-of-using-s3-methods"><i class="fa fa-check"></i><b>17.2.4</b> special casing everything through one workhorse function instead of using S3 methods</a></li>
+</ul></li>
+<li class="chapter" data-level="17.3" data-path="danger-zone.html"><a href="danger-zone.html#things-to-be-aware-of"><i class="fa fa-check"></i><b>17.3</b> Things to be aware of</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>18</b> References</a></li>
 </ul>
 
       </nav>
@@ -107,7 +162,7 @@
 
             <section class="normal" id="section-">
 <div id="references" class="section level1">
-<h1><span class="header-section-number">Chapter 17</span> References</h1>
+<h1><span class="header-section-number">Chapter 18</span> References</h1>
 <ul>
 <li>bdr’s <a href="https://developer.r-project.org/model-fitting-functions.html">model fitting functions in r</a></li>
 </ul>

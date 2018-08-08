@@ -24,6 +24,7 @@ rmd_files: [
   "interactive-modelling.Rmd",
   "programmatic-modelling.Rmd",
 
+  "vocabulary.Rmd",
   "naming-things.Rmd",
   "danger-zone.Rmd",
   "references.Rmd"

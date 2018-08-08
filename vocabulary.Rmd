@@ -1,0 +1,17 @@
+# Vocabulary
+
+useful functions that all modelling package developers should be aware of
+
+all.names(terms_object)
+all.vars(terms_object)
+
+## model frame stuff
+
+model.frame
+mode
+
+## na.action stuff
+
+## quoting operators
+
+
